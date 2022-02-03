@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Grade Calculator"
+        android:textSize="28sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/assignment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add assignment"
+        android:onClick="addAssignment"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView" />
+
+    <TextView
+        android:id="@+id/Percentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Percentage (%)"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/assignment" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="40dp"
+        android:text="Assignment"
+        android:textStyle="bold"
+        app:layout_constraintRight_toLeftOf="@id/Percentage"
+        app:layout_constraintTop_toBottomOf="@id/assignment" />
+
+    <TextView
+        android:id="@+id/weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:text="Weight (%)"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/Percentage"
+        app:layout_constraintTop_toBottomOf="@id/assignment" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/assignmentList"
+        android:layout_width="410dp"
+        android:layout_height="367dp"
+        android:layout_marginTop="1dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Percentage"
+        app:spanCount="3"
+        tools:listitem="@layout/recycler_view_item_1" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
